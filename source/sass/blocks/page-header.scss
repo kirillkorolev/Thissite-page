@@ -1,0 +1,271 @@
+.page-header__enter {
+  color: $text-blue;
+  display: inline-block;
+  width: 100%;
+  padding: 12px 0;
+  border: 2px solid $text-blue;
+  vertical-align: top;
+  text-align: center;
+}
+
+.page-header__wrapper {
+  padding: 1.7% 5% 4px 3.2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.page-header__toggle {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  outline: 0;
+}
+
+.page-header__toggle:hover .page-header__close-toggle {
+  background-color: $blue-hover;
+}
+
+.page-header__toggle:active .page-header__close-toggle {
+  opacity: 0.7;
+}
+
+.page-header__toggle:hover .page-header__close-toggle::before,
+.page-header__toggle:hover .page-header__close-toggle::after {
+  background-color: $blue-hover;
+}
+
+.page-header__toggle:active .page-header__close-toggle::before,
+.page-header__toggle:active .page-header__close-toggle::after {
+  opacity: 0.7;
+}
+
+.page-header__logo-link {
+  width: 197px;
+  height: 30px;
+}
+
+.page-header__close-toggle {
+  display: block;
+  position: relative;
+}
+
+.page-header__close-toggle::before,
+.page-header__close-toggle::after {
+  content: "";
+  background-color: $text-blue;
+  position: absolute;
+}
+
+.page-header__menu-title {
+  display: none;
+}
+
+.page-header__container {
+  background-color: $white;
+}
+
+.page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+
+
+  &--menu-closed {
+    .page-header__menu-wrapper {
+      display: none;
+    }
+
+    .page-header__close-toggle {
+      width: 20px;
+      height: 3px;
+      background-color: $text-blue;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .page-header__close-toggle::before,
+    .page-header__close-toggle::after {
+      width: 20px;
+      height: 3px;
+      left: 0;
+    }
+
+    .page-header__close-toggle::before {
+      top: -6px;
+    }
+
+    .page-header__close-toggle::after {
+      top: 6px;
+    }
+  }
+
+  &--menu-opened {
+    .page-header__close-toggle::before,
+    .page-header__close-toggle::after {
+      width: 18px;
+      height: 4px;
+      top: -2px;
+      left: 0;
+    }
+
+    .page-header__close-toggle::before {
+      transform: rotate(45deg);
+    }
+
+    .page-header__close-toggle::after {
+      transform: rotate(-45deg);
+    }
+
+    .page-header__menu-wrapper {
+      display: block;
+      position: absolute;
+      width: 100%;
+      background-color: $white;
+      top: 39px;
+      left: 0;
+      padding: 10px 2.22% 2.22%;
+      z-index: 12;
+    }
+  }
+}
+
+.page-header__container .page-header__enter,
+.page-header__help-button,
+.page-header__help-list {
+  display: none;
+}
+
+@media (min-width: $desktop-width) {
+  .page-header__menu-wrapper {
+    display: none;
+  }
+
+  .page-header__container {
+    max-width: 1280px;
+    width: auto;
+    margin: 0 auto;
+    padding: 1% 1.57% 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .page-header__toggle {
+    display: none;
+  }
+
+  .page-header__wrapper {
+    padding: 0;
+  }
+
+  .page-header__container .page-header__enter {
+    display: inline-block;
+    vertical-align: top;
+    width: 94px;
+    padding: 4px 0 7px;
+    order: -1;
+    align-self: flex-start;
+  }
+
+  .page-header__help-button {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    font-size: 15px;
+    line-height: 15px;
+    color: $text-blue;
+    cursor: pointer;
+    margin-top: 12px;
+    outline: none;
+  }
+
+  .page-header__container .page-header__enter:hover {
+    color: $blue-hover;
+    border-color: $blue-hover;
+  }
+
+  .page-header__container .page-header__enter:active {
+    opacity: 0.7;
+  }
+
+  .page-header__help-button:hover {
+    color: $blue-hover;
+  }
+
+
+  .page-header__logo-link,
+  .page-header__logo-image {
+    width: 294px;
+    height: 44px;
+  }
+
+  .page-header__desktop-wrapper {
+    max-width: 60.8%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10px;
+  }
+
+  .page-header__help-menu {
+    position: relative;
+  }
+
+  .page-header__help-list {
+    @include reset-list;
+    padding: 9px 4px 9px;
+    flex-direction: column;
+    box-shadow: 0 0 5.31px 3.69px rgba(70, 79, 87, 0.1);
+    display: none;
+  }
+
+  .page-header__help-link {
+    color: $text-blue;
+    text-decoration: underline;
+  }
+
+  .page-header__help-menu:hover .page-header__help-list {
+    display: flex;
+    position: absolute;
+    top: 47px;
+    right: 0;
+    background-color: $white;
+    width: 238px;
+  }
+
+  .page-header__help-list::after {
+    content: "";
+    position: absolute;
+    display: block;
+    transform: rotate(-45deg);
+    background-color: $white;
+    top: -8px;
+    right: 23px;
+    box-shadow: 4px -5px 5px 0 rgba(70, 79, 87, 0.1);
+    width: 15px;
+    height: 15px;
+    z-index: 1;
+  }
+
+  .page-header__help-item {
+    padding: 11px 18px;
+    background-color: $white;
+    z-index: 10;
+  }
+
+  .page-header__help-item:hover {
+    background-color: $gray;
+  }
+
+  .page-header__help-item:not(:last-child) {
+    margin-bottom: 4px;
+  }
+}

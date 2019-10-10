@@ -1,0 +1,17 @@
+.main-nav__list {
+  @include reset-list;
+}
+
+.main-nav__link {
+  color: $text-blue;
+  text-decoration: underline;
+}
+
+.main-nav__item {
+  padding: 10px 0 10px 20px;
+  margin-bottom: 7px;
+}
+
+.main-nav__item:hover {
+  background-color: $gray;
+}

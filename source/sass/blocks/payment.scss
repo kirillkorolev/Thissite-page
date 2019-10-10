@@ -1,0 +1,392 @@
+.payment__title {
+  font-size: 21px;
+  line-height: 21px;
+  margin: 0;
+  margin-bottom: 14px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.payment__list {
+  @include reset-list;
+  border-bottom: 1px solid $gray;
+}
+
+.payment__item-title {
+  display: none;
+}
+
+.payment__slogan {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: $red;
+  text-transform: uppercase;
+  margin-bottom: 9px;
+  letter-spacing: 0.15em;
+}
+
+.payment__accordion {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-top: 1px solid $gray;
+  outline: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 4% 4% 4% 6.67%;
+  color: $text-blue;
+  justify-content: space-between;
+
+  &--active {
+    .payment__triangle {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.payment__item:first-child .payment__accordion {
+  border-top: none;
+}
+
+.payment__accordion svg {
+  flex-shrink: 0;
+}
+
+.payment__wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  padding: 0 4%;
+}
+
+.payment__text-wrapper {
+  margin-top: -8px;
+  margin-bottom: 29px;
+}
+
+.payment__text {
+  margin: 0;
+  text-align: left;
+}
+
+.payment__item {
+  &--gibdd {
+    .payment__text:nth-of-type(1) {
+      margin-bottom: 10px;
+    }
+
+    .payment__text:nth-of-type(2) {
+      margin-bottom: 33px;
+    }
+  }
+
+  &--gibdd-tax {
+    .payment__accordion {
+      padding-bottom: 5%;
+    }
+  }
+
+  &--debts {
+    .payment__accordion {
+      padding: 3.8% 4% 3.5% 6.67%;
+    }
+
+    .payment__accordion-text {
+      margin-left: 5%;
+    }
+  }
+
+  &--tax {
+    .payment__accordion {
+      padding: 3.6% 4% 3% 6.67%;
+    }
+  }
+
+  &--service {
+    .payment__accordion {
+      padding: 3.6% 4% 3% 6.67%;
+    }
+  }
+}
+
+.payment__accordion-text {
+  color: $text-blue;
+  font-size: 18px;
+  line-height: 18px;
+  margin-left: 7.5%;
+  text-align: left;
+  border-bottom: 1px dotted $text-blue;
+}
+
+.payment__item .payment__text:nth-of-type(1) {
+  margin-top: 3px;
+}
+
+.payment__accordion-title {
+  display: flex;
+  flex-grow: 2;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.payment__accordion:hover svg {
+  color: $blue-hover;
+}
+
+.payment__accordion:hover .payment__accordion-text {
+  color: $blue-hover;
+  border-color: $blue-hover;
+}
+
+.payment__accordion:hover .payment__triangle {
+  border-top-color: $blue-hover;
+}
+
+.payment__accordion:active {
+  opacity: 0.7;
+}
+
+.payment__triangle {
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 8px solid $text-blue;
+}
+
+.payment__menu-list {
+  display: none;
+}
+
+.payment__image {
+  display: none;
+}
+
+.payment {
+  margin-bottom: 32px;
+}
+
+.payment__title-desktop {
+  display: none;
+}
+
+.payment__link {
+  display: none;
+}
+
+@media (min-width: $desktop-width) {
+  .payment__title {
+    font-size: 36px;
+    line-height: 36px;
+    margin-bottom: 22px;
+  }
+
+  .payment__item-title {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 29px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-weight: 400;
+  }
+
+  .payment__accordion {
+    display: none;
+  }
+
+  .payment__wrapper {
+    display: block;
+    overflow: auto;
+    max-height: 100%;
+    padding: 0;
+  }
+
+  .payment__menu-list {
+    @include reset-list;
+    display: flex;
+    margin: 0 auto 80px;
+    max-width: 650px;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+  }
+
+  .payment__menu-item {
+    flex-grow: 1;
+    font-size: 18px;
+    line-height: 33px;
+    color: $black;
+  }
+
+  .payment__menu-item:last-child {
+    display: flex;
+    max-width: 337px;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 154px;
+    align-items: center;
+    margin-top: -4px;
+  }
+
+  .payment__menu-link {
+    color: $text-blue;
+    font-size: 18px;
+    line-height: 27px;
+    display: inline-block;
+    vertical-align: top;
+    border-bottom: 1px dotted $text-blue;
+    flex-wrap: wrap;
+  }
+
+  .payment__menu-link:hover {
+    color: $blue-hover;
+  }
+
+  .payment__menu-link:active {
+    opacity: 0.7;
+  }
+
+  .payment__image {
+    display: block;
+  }
+
+  .payment__item-wrapper {
+    max-width: 1000px;
+    width: auto;
+    padding: 0 1.56%;
+    margin: 0 auto;
+    display: flex;
+  }
+
+  .payment__item {
+    &--gibdd {
+      .payment__text-wrapper {
+        margin-bottom: 0;
+      }
+
+      .payment__wrapper {
+        margin-bottom: 48px;
+      }
+    }
+
+    &--debts {
+      padding: 75px 0;
+      border-bottom: 1px solid  $gray;
+
+      .payment__item-wrapper {
+        flex-direction: row-reverse;
+      }
+
+      .payment__text:nth-of-type(1) {
+        margin-bottom: 10px;
+        margin-right: 30px;
+      }
+
+      .payment__text-wrapper div {
+        margin-bottom: 54px;
+      }
+
+      .payment__text:nth-of-type(2) {
+        margin-right: 10px;
+      }
+
+      .payment__text-wrapper {
+        margin-right: 20px;
+        margin-bottom: 0;
+      }
+    }
+
+    &--service {
+      padding: 75px 0;
+      border-bottom: 1px solid  $gray;
+
+      .payment__item-wrapper {
+        flex-direction: row-reverse;
+      }
+
+      .payment__text:nth-of-type(1) {
+        margin-bottom: 33px;
+      }
+
+      .payment__text-wrapper {
+        margin-right: 0;
+      }
+    }
+
+    &--tax {
+      padding: 75px 0;
+      border-bottom: 1px solid  $gray;
+
+      .payment__text:nth-of-type(1) {
+        margin-bottom: 32px;
+        margin-right: 65px;
+      }
+    }
+
+    &--gibdd-tax {
+      border-bottom: 1px solid  $gray;
+
+      .payment__item-title {
+        display: none;
+      }
+
+      .payment__text-wrapper {
+        max-width: 515px;
+        margin-right: 0;
+        margin-bottom: 70px;
+      }
+    }
+
+    &--debts,
+    &--service {
+      .payment__image-wrapper {
+        margin-right: 52px;
+      }
+    }
+  }
+
+  .payment__link {
+    display: inline-block;
+    color: $text-blue;
+    font-size: 24px;
+    line-height: 24px;
+    border-bottom: 1px solid $text-blue;
+    margin-bottom: 32px;
+  }
+
+  .payment__link:hover {
+    color: $blue-hover;
+    border-color: $blue-hover;
+  }
+
+  .payment__link:active {
+    opacity: 0.7;
+  }
+
+  .payment__image-wrapper {
+    display: block;
+    width: 308px;
+    flex-shrink: 0;
+  }
+
+  .payment__title-mobile {
+    display: none;
+  }
+
+  .payment__title-desktop {
+    display: inline;
+  }
+
+  .payment__text-wrapper {
+    margin-right: 42px;
+    margin-bottom: 48px;
+  }
+
+  .payment {
+    margin-bottom: 77px;
+  }
+}
